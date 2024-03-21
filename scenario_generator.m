@@ -1,12 +1,14 @@
 lane_angle=0;head_coeff=[];fitcoeff=[];
-
+lookup_radius=[15 30 60 100 150 280  710 460];
+lookup_speed=[20 30 40 50 60 80 120 100 ].*1000/3600
 scenario = drivingScenario('SampleTime',0.1','StopTime',60);
 %% curved driving
 % scenario = drivingScenario('SampleTime',0.1','StopTime',60);
 x_ego=0;
 y_ego=0;
 angs = [0:5:360]';
-R = 250;
+R = 500;
+vxmax=interp1(lookup_radius,lookup_speed,R);
 roadcenters = R*[cosd(angs) sind(angs) zeros(size(angs))]-[R 0 0];
 roadwidth = 10;
 road(scenario,roadcenters,roadwidth);
@@ -22,7 +24,11 @@ threshld=50;
 x_ego=0;
 y_ego=3.2;
 x_start=x_ego+L+threshld;
-roadcenters = [x_ego y_ego 0;x_ego+100 y_ego 0;x_start y_ego 0]
+x=(x_ego:20:x_start)';
+y=[y_ego*ones(1,50),-y_ego*ones(1,50)]';
+len=floor(length(x)/length(y));
+y_seq=[repmat(y,len,1);repmat(y(end),length(x)-len*length(y),1)];
+roadcenters = [x y_seq zeros(length(x),1)];
 roadwidth = 5;
 laneMark = laneMarking('Solid');
 laneSpecification = lanespec(2,'Width',5,Marking=laneMark);
@@ -38,4 +44,5 @@ ref_generator;
 vx_ego=0.1;
 psi_ego=0;
 Regen_on=1;
+vxmax=inf;
 
