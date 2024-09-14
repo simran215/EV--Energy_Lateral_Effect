@@ -1,5 +1,26 @@
 ## About this repository
-The files in this repository are related to the research paper : 
+The files in this repository are related to the research paper : Energy Consumption of Electric Vehicles: Effect of Lateral Dynamics 
+
+**Link :** https://ieeexplore.ieee.org/abstract/document/10200325
+
+**Citation:** 
+
+@inproceedings{kumari2023energy,
+
+  title={Energy Consumption of Electric Vehicles: Effect of Lateral Dynamics},
+  
+  author={Kumari, Simran and Ghosh, Susenjit and Hota, Ashish R and Mukhopadhyay, Siddhartha},
+  
+  booktitle={2023 IEEE 97th Vehicular Technology Conference (VTC2023-Spring)},
+  
+  pages={1--5},
+  
+  year={2023},
+  
+  organization={IEEE}
+  
+}
+
 
 ## Procedure
 1. Clone the repository or download the zipped folder.
