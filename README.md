@@ -24,6 +24,6 @@ The files in this repository are related to the research paper : Energy Consumpt
 
 ## Procedure
 1. Clone the repository or download the zipped folder.
-2. Open the vehicle_model.slx file in Simulink. (Note that the model is build in Matlab version R2021b)
+2. Open the _vehicle_model.slx_ file in Simulink. (Note that the model has been created in Matlab version R2021b)
 3. Run the loaded simulink file.
-4. To make changes in scenario, edit scenario_generator.m file.
+4. To make changes in scenario, edit _scenario_generator.m_ file.
